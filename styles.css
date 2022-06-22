@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Charis+SIL&family=Dancing+Script&family=Pacifico&display=swap");
+:root {
+  --main--color: #ff075e;
+  --secondary--color: #050505;
+  --text--color: #1f1f1f;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  /* font-family: "Charis SIL", serif; */
+  /* font-family: "Dancing Script", cursive; */
+  font-family: "Pacifico", cursive;
+  font-size: normal;
+}
+
+header {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 0.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  width: 15%;
+  /* border: 2px solid lightblue; */
+}
+
+.logo h2 {
+  font-size: 40px;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  background: linear-gradient(#416ae7, #ff075e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* -webkit-text-fill-color: transparent; */
+  color: transparent;
+}
+menu {
+  width: 60%;
+  /* border: 2px solid green; */
+}
+header menu ul {
+  width: 100%;
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+menu ul li a {
+  width: 100%;
+  text-decoration: none;
+  color: var(--text--color);
+  transition: all 200ms linear;
+}
+ul li a span {
+  font-size: 18px;
+  text-transform: capitalize;
+  letter-spacing: 1.8px;
+}
+
+ul li a span:nth-child(2) {
+  /* color: green; */
+  margin-left: 5px;
+}
+
+ul li:hover a {
+  background-color: #416ae7;
+  color: #fff;
+  padding: 0.1rem;
+  border-radius: 100px;
+  letter-spacing: 1.2px;
+  /* line-height: 40px; */
+}
+
+/* ul li a:active {
+  color: red;
+} */
+header .header--options {
+  width: 25%;
+  /* border: 2px solid lightcoral; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: 1rem; */
+}
+.header--options span:not(span:nth-child(3)) {
+  cursor: pointer;
+  font-size: 22px;
+}
+.header--options span:nth-child(3) {
+  background-color: #416ae7;
+  color: #fff;
+  padding: 8px 40px;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.header--options .image--container {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.image--container > img {
+  position: absolute;
+  /* left: 0;
+    top: 0; */
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-position: center;
+  object-fit: cover;
+}
+
+header .header--subMenu {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  display: grid;
+  grid-template-columns: repeat(3, 300px) 1fr;
+  grid-template-rows: auto;
+  /* border: 2px solid red; */
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  /* padding: 1rem 3rem 5rem 4rem; */
+  border-radius: 5px;
+  transform: translate(-80px, -50px);
+  /* width: 1200px; */
+  transition: all 300ms linear;
+}
+.header--subMenu.hidden {
+  display: none;
+}
+.header--subMenu .box:not(.box--4) {
+  display: grid;
+}
+
+.header--subMenu .box {
+  height: 100%;
+  /* border: 2px solid red; */
+  padding: 2rem 1rem 5rem 4rem;
+}
+
+.box h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--secondary--color);
+  white-space: nowrap;
+  font-size: 18px;
+}
+
+.box span {
+  letter-spacing: 1px;
+  font-size: 16px;
+  color: var(--text--color);
+}
+
+.box h2::first-letter {
+  text-transform: uppercase;
+}
+
+.box--3 {
+  border-right: 1px solid var(--text--color);
+}
+.container--sub {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+}
+.container--sub .img--sub {
+  position: relative;
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 2px;
+}
+.img--sub img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container--sub .conSub--content .sub--title {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 1rem;
+}
+
+.container--sub:nth-child(2) {
+  margin-top: 2rem;
+}
+
+.header--options .fa-gear:hover {
+  color: #416ae7;
+  animation-name: rotate--gear;
+  animation-duration: 700ms;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  /* animation-direction: alternate; */
+  transition: transform 300ms linear;
+  animation-timing-function: linear;
+}
+
+@keyframes rotate--gear {
+  100% {
+    transform: rotate(180deg) scale(1.3);
+  }
+}
